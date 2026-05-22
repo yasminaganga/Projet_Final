@@ -1,6 +1,8 @@
 
 <?php
 require 'connexion.php';
+// include 'config/connection.php';
+include 'connection.php';
 try {
     $sql = "SELECT id, titre, contenu, image FROM articles";
     $stmt = $pdo->prepare($sql);
@@ -22,12 +24,12 @@ try {
 
     <!-- NAVBAR -->
     <div class="navbar">
-        <a href="index.php" class="logo">
+        <a href="home.php" class="logo">
             <span class="logo-icon"></span> MindCare
         </a>
 
         <ul class="menu_list">
-            <li><a href="index.php">Home</a></li>
+             <li><a href="home.php" class="active">Home</a></li>
             <li><a href="articles.php" class="active">Articles</a></li>
             <li><a href="storys.php">Stories</a></li>
             <li><a href="contact.php">Contact</a></li>
@@ -40,7 +42,7 @@ try {
 <main class="articles">
     <?php if (!empty($articles)):?>
         <?php foreach ($articles as $article):?>
-            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['titre']); ?>">
+            <img src="image/<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['titre']); ?>">
                     
                     <div class="article-content">
                        

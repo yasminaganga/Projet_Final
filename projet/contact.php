@@ -17,11 +17,11 @@ $all_stories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <div class="navbar">
-        <a href="index.php" class="logo">
+        <a href="home.php" class="logo">
             <span class="logo-icon"></span> MindCare
         </a>
         <ul class="menu_list">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="home.php">Home</a></li>
              <li><a href="storys.php">Stories</a></li>
             <li><a href="articles.php">Articles</a></li>
             <li><a href="contact.php" class="active">contact</a></li>

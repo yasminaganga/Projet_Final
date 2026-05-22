@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindCare - Add New Article</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="navbar">
-        <a href="index.php" class="logo">
+        <a href="home.php" class="logo">
             <span class="logo-icon"></span> MindCare
         </a>
         <ul class="menu_list">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li><a href="articles.php" class="active">Articles</a></li>
             <li><a href="storys.php">Stories</a></li>
             <li><a href="contact.php">Contact</a></li>

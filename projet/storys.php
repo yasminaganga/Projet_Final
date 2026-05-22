@@ -1,25 +1,34 @@
 <?php
 require 'connexion.php';
+session_start();
+// include 'config/connection.php';
 if ( isset($_POST['ook'])){
+
   $nom = htmlspecialchars($_POST['story_title']); 
     $email = htmlspecialchars($_POST['story_email']);
-    $message = htmlspecialchars($_POST['story_content']); 
+    $message = htmlspecialchars($_POST['story_content']);
 
-
-    if (!empty($message)) {
+    
+// if(isset ($_SESSION['name'])){
+    
+if (!empty($message)) {
         try {
+
          
             $stmt = $pdo->prepare("INSERT INTO stories (nom, email, message) VALUES (?, ?, ?)");
             $stmt->execute([$nom, $email, $message]);
             
           
-            header("Location: storys.php");
+            header("Location: contact.php");
             exit;
         } catch (PDOException $e) {
             die("Erreur lors de l'enregistrement : " . $e->getMessage());
         }
     }
 }
+
+    
+// }
 
 ?>
 
@@ -29,14 +38,15 @@ if ( isset($_POST['ook'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="navbar">
-        <a href="index.php" class="logo">
+        <a href="home.php" class="logo">
             <span class="logo-icon"></span> MindCare
         </a>
         <ul class="menu_list">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li><a href="articles.php">Articles</a></li>
             <li><a href="storys.php" class="active">storys</a></li>
             <li><a href="contact.php">Contact</a></li>

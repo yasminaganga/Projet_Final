@@ -1,5 +1,6 @@
 <?php
 require 'connexion.php';
+// include 'config/connection.php';
 
 
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -34,15 +35,16 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindCare - <?php echo htmlspecialchars($article['titre']); ?></title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="navbar">
-        <a href="index.php" class="logo">
+        <a href="home.php" class="logo">
             <span class="logo-icon"></span> MindCare
         </a>
         <ul class="menu_list">
-            <li><a href="index.php">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li><a href="articles.php" class="active">Articles</a></li>
             <li><a href="storys.php">Stories</a></li>
             <li><a href="contact.php">Contact</a></li>
@@ -63,8 +65,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             </div>
             
             <div class="article-image">
-                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['titre']); ?>">
-            </div>
+                 <img src="image/<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['titre']); ?>">
 
             <div class="article-body">
                 <p><?php echo nl2br(htmlspecialchars($article['contenu'])); ?></p>
